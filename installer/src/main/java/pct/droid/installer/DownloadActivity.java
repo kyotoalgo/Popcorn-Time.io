@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
@@ -25,17 +26,19 @@ import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import pct.droid.installer.utils.Progress;
 import pct.droid.installer.utils.Progress.ProgressListener;
+import pct.droid.installer.utils.UpdaterData;
 
 
-public class DownloadActivity extends ActionBarActivity {
+public class DownloadActivity extends AppCompatActivity {
 
     public final static int ANDROID_TV = 1;
     public final static int ANDROID_HANDSET = 0;
     private static OkHttpClient mHttpClient;
 
     private final String ANDROID_PACKAGE = "application/vnd.android.package-archive";
-    private final String DATA_URL = "http://ci.popcorntime.io/android";
+    private final String DATA_URL = "https://ci.popcorntime.io/android";
 
     private final Gson mGson = new Gson();
 
@@ -47,7 +50,7 @@ public class DownloadActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_download);
         ButterKnife.inject(this);
 
         mHttpClient = getHttpClient();
@@ -63,21 +66,6 @@ public class DownloadActivity extends ActionBarActivity {
         mProgressDownload.setProgress(0);
 
         downloadInstallFile();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

@@ -17,9 +17,6 @@ import pct.droid.installer.DownloadActivity;
 import pct.droid.installer.IntroActivity;
 import pct.droid.installer.R;
 
-/**
- * Created by Seïfane on 6/25/2015.
- */
 public class ThirdSlide extends Fragment {
 
     @InjectView(R.id.text_version)

@@ -3,6 +3,8 @@ package pct.droid.installer;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.github.paolorotolo.appintro.AppIntro2;
+
 import pct.droid.installer.slides.FirstSlide;
 import pct.droid.installer.slides.SecondSlide;
 import pct.droid.installer.slides.ThirdSlide;
