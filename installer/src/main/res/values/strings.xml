@@ -1,10 +1,22 @@
 <resources>
     <string name="app_name">Popcorn Time Installer</string>
 
+    <!-- Slide 1 -->
+    <string name="title_welcome">Welcome in Popcorn Time</string>
+    <string name="subtitle_welcome">Blablablabla</string>
+
+    <!-- Slide 2 -->
+    <string name="title_choose_version">Choose the version you're installing</string>
+    <string name="radio_phone_tablet">Phone or Tablet</string>
+    <string name="radio_android_tv">Android TV</string>
+
+    <!-- Slide 3 -->
+    <string name="title_recap">Let\'s recap</string>
+
     <!-- Activity Download -->
     <string name="downloading_subtitle">The Popcorn Time app is being downloaded</string>
-    <string name="downloading_error">An error occured</string>
-    <string name="downloading_error_server">An error occured while fetching update server</string>
+    <string name="downloading_error">An error occurred</string>
+    <string name="downloading_error_server">An error occurred while fetching update server</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

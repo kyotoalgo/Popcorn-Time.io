@@ -11,9 +11,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="71dp"
-        android:text="Choose the version you&apos;re installing"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:text="@string/title_choose_version" />
 
     <RadioGroup
         android:id="@+id/group_version_type"
@@ -31,14 +31,14 @@
             android:id="@+id/version_handset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone or Tablet"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:text="@string/radio_phone_tablet" />
 
         <RadioButton
             android:id="@+id/version_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Android tv"
+            android:text="@string/radio_android_tv"
             android:textColor="#FFFFFF" />
 
     </RadioGroup>
