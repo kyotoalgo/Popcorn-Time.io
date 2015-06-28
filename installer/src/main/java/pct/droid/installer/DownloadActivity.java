@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.squareup.okhttp.Callback;
@@ -46,6 +44,8 @@ public class DownloadActivity extends AppCompatActivity {
 
     @InjectView(R.id.progress_download)
     ProgressBar mProgressDownload;
+    @InjectView(R.id.text_subtitle)
+    TextView mTextSubtitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +95,7 @@ public class DownloadActivity extends AppCompatActivity {
             @Override
             public void onFailure(Request request, IOException e) {
                 //TODO: ERROR WHILE FETCHING UPDATE DATA
+                mTextSubtitle.setText(R.string.downloading_error_server);
             }
 
             @Override
@@ -117,9 +118,8 @@ public class DownloadActivity extends AppCompatActivity {
 
                         downloadFile(channel.updateUrl);
                     } else {
-
+                        mTextSubtitle.setText(R.string.downloading_error_server);
                         //TODO: ERROR WHILE FETCHING UPDATE SERVER
-
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -156,7 +156,7 @@ public class DownloadActivity extends AppCompatActivity {
         mHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
-
+                mTextSubtitle.setText(R.string.downloading_error);
                 //TODO :: ERROR WHILE DOWNLOADING
             }
 
@@ -175,6 +175,7 @@ public class DownloadActivity extends AppCompatActivity {
                     startActivity(notificationIntent);
                 } else {
                     //TODO :: ERROR WHILE DOWNLOADING
+                    mTextSubtitle.setText(R.string.downloading_error);
                 }
             }
         });

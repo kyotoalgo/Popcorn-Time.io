@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Popcorn Time Installer</string>
 
+    <!-- Activity Download -->
+    <string name="downloading_subtitle">The Popcorn Time app is being downloaded</string>
+    <string name="downloading_error">An error occured</string>
+    <string name="downloading_error_server">An error occured while fetching update server</string>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 </resources>
